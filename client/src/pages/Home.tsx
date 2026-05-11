@@ -55,9 +55,14 @@ const packages = [
 ] as const;
 
 const faqs = [
-  ["Is this just a chatbot?", "No. The real value is the complete lead flow: page, intake, routing, booking, CRM, and follow-up."],
-  ["Do we need a new website?", "Not always. If your site is usable, the system can improve the lead-capture flow without a full rebuild."],
-  ["Can this work with WhatsApp?", "Yes. WhatsApp routing is central because many UAE buyers expect fast mobile messaging."],
+  ["Is this just a chatbot?", "No. The real value is the complete lead flow: landing page, AI intake, WhatsApp routing, booking calendar, CRM pipeline, and follow-up sequences. A chatbot alone does nothing if the page is weak or there is no system to catch what the AI collects."],
+  ["Do we need a new website?", "Not always. If your current site generates inquiries, we improve the capture layer without a rebuild. If the site is losing visitors before they reach out, a new landing page is included in Growth and Premium."],
+  ["Can this work with WhatsApp?", "Yes — WhatsApp routing is central to every package. Most UAE buyers expect fast mobile messaging, not email. The system catches inquiries from WhatsApp, Instagram DMs, your website form, and paid ads, then qualifies them in one unified pipeline."],
+  ["How long does setup take?", "Starter: 5–7 business days. Growth: 10–14 days. Premium: 3–4 weeks including AI voice and custom workflow configuration. You will have a live system taking real leads within two weeks for most packages."],
+  ["What does the $397/mo or $797/mo ongoing fee cover?", "Hosting, platform licences, ongoing automation monitoring, message template updates, and priority support. If a WhatsApp template gets rejected or a booking flow breaks, we fix it — you do not manage any of the infrastructure."],
+  ["Do you work with businesses outside Dubai?", "Yes. The system is built for UAE businesses across Dubai, Abu Dhabi, Sharjah, and remote-service businesses operating across the GCC. Pricing is in USD to keep invoicing straightforward for internationally registered companies."],
+  ["What if we already use a CRM?", "The system can connect to most CRMs via webhook or API. We will map the intake fields to your existing pipeline during the strategy call rather than force a new tool on your team."],
+  ["What happens after we submit the audit form?", "Within one business day, we review your current lead flow, identify the biggest gaps, and send you a personalised recommendation. There is no hard sell — if the system does not make sense for your business, we will tell you."],
 ] as const;
 
 function scrollToForm() {
