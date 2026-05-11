@@ -30,7 +30,7 @@ const flowSteps = [
   [Zap, "Instant response", "The system replies and collects the first details."],
   [Target, "Qualification", "Serious prospects are identified before the call."],
   [CalendarCheck, "Booking", "Qualified leads are guided toward a calendar or quote."],
-  [MailCheck, "Follow-up", "Quiet leads receive reminders instead of being forgotten."],
+  [MailCheck, "Follow-up", "Leads who have not replied receive timed reminders automatically."],
 ] as const;
 
 const industries = [
@@ -45,7 +45,7 @@ const offerSteps = [
   ["Premium landing page", "Present the offer clearly and turn visitors into inquiries."],
   ["AI response assistant", "Answer common questions and collect intake details."],
   ["WhatsApp + calendar routing", "Guide qualified prospects toward a booked call."],
-  ["CRM pipeline", "Organise new, contacted, booked, and closed leads."],
+  ["CRM pipeline", "Organise new, contacted, booked, and closed leads in one view."],
 ] as const;
 
 const packages = [
@@ -150,8 +150,8 @@ export default function Home() {
                 <Button onClick={scrollToForm} className="gold-button h-14 px-7 text-base">
                   Book a Free Lead Response Audit <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button onClick={() => document.getElementById("industries")?.scrollIntoView({ behavior: "smooth" })} variant="outline" className="h-14 border-white/15 bg-white/[0.03] px-7 text-base text-white hover:bg-white/10">
-                  See UAE playbook
+                <Button onClick={() => document.getElementById("system")?.scrollIntoView({ behavior: "smooth" })} variant="outline" className="h-14 border-white/15 bg-white/[0.03] px-7 text-base text-white hover:bg-white/10">
+                  See how it works
                 </Button>
               </div>
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -227,15 +227,15 @@ export default function Home() {
             <div className="mt-14 grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
               <div className="market-panel p-8 sm:p-10">
                 <p className="text-xs uppercase tracking-[0.24em] text-[#d7b46a]">Dubai · Abu Dhabi · premium service teams</p>
-                <h3 className="mt-5 font-display text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">Turn Dubai inquiries into booked appointments with an AI Lead Concierge.</h3>
-                <p className="mt-5 text-lg leading-8 text-[#c2ced6]">A premium website, AI response assistant, WhatsApp routing, booking calendar, and CRM workflow built for UAE service businesses that cannot afford slow follow-up.</p>
+                <h3 className="mt-5 font-display text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">Every industry has a different way of losing leads. We fix the one that fits yours.</h3>
+                <p className="mt-5 text-lg leading-8 text-[#c2ced6]">We build the system around how your industry generates and closes inquiries — not a generic template that ignores how your clients actually behave.</p>
                 <div className="mt-8 rounded-none border border-white/10 bg-white/[0.035] p-6">
-                  <p className="font-display text-2xl text-white">Your leads are expensive. Slow follow-up makes them even more expensive.</p>
-                  <p className="mt-3 leading-7 text-[#9fb0bc]">Every inquiry is answered instantly, qualified professionally, and routed into your calendar or sales pipeline while your team stays focused on closing.</p>
+                  <p className="font-display text-2xl text-white">Most UAE service businesses lose 30–50% of their leads to slow response — before a single conversation starts.</p>
+                  <p className="mt-3 leading-7 text-[#9fb0bc]">The first business to respond wins the inquiry. We make sure that business is yours, around the clock, without adding headcount.</p>
                 </div>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                   <Button onClick={scrollToForm} className="gold-button h-13 px-6">Book a Free Lead Response Audit</Button>
-                  <Button onClick={() => document.getElementById("packages")?.scrollIntoView({ behavior: "smooth" })} variant="outline" className="h-13 border-white/15 bg-transparent px-6 text-white hover:bg-white/10">See UAE playbook</Button>
+                  <Button onClick={() => document.getElementById("packages")?.scrollIntoView({ behavior: "smooth" })} variant="outline" className="h-13 border-white/15 bg-transparent px-6 text-white hover:bg-white/10">View packages</Button>
                 </div>
               </div>
 
@@ -262,7 +262,7 @@ export default function Home() {
               <div>
                 <SectionLabel>Implementation packages</SectionLabel>
                 <h2 className="mt-4 font-display text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">Build the lead system prospects understand in five seconds.</h2>
-                <p className="mt-6 text-lg leading-8 text-[#b8c7d1]">The page sells the diagnostic first, then reveals the setup path once the prospect understands the cost of slow response.</p>
+                <p className="mt-6 text-lg leading-8 text-[#b8c7d1]">Every package is a complete system, not a tool. Strategy, build, and ongoing support are included so your team never manages the infrastructure.</p>
               </div>
               <div className="space-y-4">
                 {offerSteps.map(([item, description], index) => (
@@ -279,10 +279,17 @@ export default function Home() {
 
             <div className="mt-16 grid gap-5 lg:grid-cols-3">
               {packages.map(([name, price, contents]) => (
-                <div key={name} className="group border border-white/10 bg-[#07131b] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#d7b46a]/40">
+                <div key={name} className="group flex flex-col border border-white/10 bg-[#07131b] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#d7b46a]/40">
                   <p className="text-xs uppercase tracking-[0.24em] text-[#d7b46a]">{price}</p>
                   <h3 className="mt-4 font-display text-3xl text-white">{name}</h3>
-                  <p className="mt-4 leading-7 text-[#a7b7c2]">{contents}</p>
+                  <p className="mt-4 grow leading-7 text-[#a7b7c2]">{contents}</p>
+                  <button
+                    type="button"
+                    onClick={scrollToForm}
+                    className="mt-8 w-full border border-[#d7b46a]/30 bg-[#d7b46a]/10 py-3 text-sm font-semibold uppercase tracking-widest text-[#d7b46a] transition hover:bg-[#d7b46a]/20"
+                  >
+                    Get started →
+                  </button>
                 </div>
               ))}
             </div>
@@ -294,7 +301,7 @@ export default function Home() {
           <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_70%_40%,rgba(215,180,106,0.16),transparent_42%)]" />
           <div className="container relative grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="max-w-xl">
-              <SectionLabel>Capture inquiries</SectionLabel>
+              <SectionLabel>Free audit</SectionLabel>
               <h2 className="mt-4 font-display text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">Request your UAE lead-response audit</h2>
               <p className="mt-6 text-lg leading-8 text-[#b8c7d1]">This form is intentionally short. The goal is to start a conversation, not force a prospect to write a technical project brief.</p>
               <div className="mt-8 border border-[#d7b46a]/20 bg-[#d7b46a]/[0.05] p-5 text-sm leading-6 text-[#d7b46a]">
@@ -330,7 +337,7 @@ export default function Home() {
             <div>
               <SectionLabel>FAQ</SectionLabel>
               <h2 className="mt-4 font-display text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">Questions prospects ask before booking.</h2>
-              <p className="mt-6 text-lg leading-8 text-[#b8c7d1]">These answers reduce friction and clarify that this is a complete lead flow, not a gimmick.</p>
+              <p className="mt-6 text-lg leading-8 text-[#b8c7d1]">Everything you need to know before getting started.</p>
             </div>
             <div className="space-y-3">
               {faqs.map(([question, answer], index) => (
