@@ -230,7 +230,7 @@ export default function Home() {
                 </div>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                   <Button onClick={scrollToForm} className="gold-button h-13 px-6">Book a Free Lead Response Audit</Button>
-                  <Button variant="outline" className="h-13 border-white/15 bg-transparent px-6 text-white hover:bg-white/10">See UAE playbook</Button>
+                  <Button onClick={() => document.getElementById("packages")?.scrollIntoView({ behavior: "smooth" })} variant="outline" className="h-13 border-white/15 bg-transparent px-6 text-white hover:bg-white/10">See UAE playbook</Button>
                 </div>
               </div>
 
@@ -292,8 +292,8 @@ export default function Home() {
               <SectionLabel>Capture inquiries</SectionLabel>
               <h2 className="mt-4 font-display text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">Request your UAE lead-response audit</h2>
               <p className="mt-6 text-lg leading-8 text-[#b8c7d1]">This form is intentionally short. The goal is to start a conversation, not force a prospect to write a technical project brief.</p>
-              <div className="mt-8 border border-[#39d5ff]/20 bg-[#39d5ff]/[0.06] p-5 text-sm leading-6 text-[#bcefff]">
-                <strong className="text-white">Note:</strong> Connect this form to GHL, your email, or a backend before going live to store real leads.
+              <div className="mt-8 border border-[#d7b46a]/20 bg-[#d7b46a]/[0.05] p-5 text-sm leading-6 text-[#d7b46a]">
+                <strong className="text-white">What happens next:</strong> Within one business day we review your current lead flow and send you a personalised audit with specific gaps and a system recommendation.
               </div>
             </div>
 
