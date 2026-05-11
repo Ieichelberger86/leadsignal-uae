@@ -3,5 +3,13 @@
   "buildCommand": "vite build",
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.leadsignal-uae.com" }],
+      "destination": "https://leadsignal-uae.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]
 }
